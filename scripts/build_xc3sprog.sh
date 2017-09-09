@@ -11,7 +11,8 @@ else
 fi
 
 ANDROID_ABI=${ANDROID_ABI:-"armeabi-v7a with NEON"}
-WD=$(readlink -f "`dirname $0`/..")
+#WD=$(readlink -f "`dirname $0`/..")
+WD=/Users/alvaroviebrantz/Documents/Desenvolvimento/IoT/matrix-creator-android-things
 N_JOBS=${N_JOBS:-4}
 XC3PROG_ROOT=${WD}/xc3sprog
 BUILD_DIR=${XC3PROG_ROOT}/build
@@ -48,3 +49,6 @@ if [ -f "${ANDROID_LIB_ROOT}/xc3sprog/lib/libxc3loader.so" ]; then
     echo `ls -Ggs --time-style=iso "${WD}/app/src/main/libs/armeabi-v7a/libxc3loader.so" | sed "s|${WD}/app/src/main/libs/armeabi-v7a/||g"`
 fi
 cd "${WD}"
+
+cp android_lib/xc3sprog/bin/xc3sprog app/src/main/assets/matrix-xc3sprog
+cp android_lib/xc3sprog/bin/xc3sprog firmware/matrix-xc3sprog

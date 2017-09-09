@@ -14,7 +14,7 @@ echo 0 > /sys/class/gpio/gpio21/value
 
 
 echo "reconfigurate FPGA and Micro.."
-/system/bin/matrix-xc3sprog -p 1 -c sysfsgpio /system/bin/matrix_system.bit
+/data/local/matrix-xc3sprog -v -p 1 -c sysfsgpio /data/local/matrix_system.bit
 echo "done"
 
 # blink LED 
